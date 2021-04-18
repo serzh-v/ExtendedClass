@@ -1,8 +1,7 @@
 package com.mycompany.extendedclass;
 
 /**
- *
- * @author Dell
+ * класс о котором спрашивается в задании
  */
 public class ExtendedClass {
     byte b;
@@ -17,23 +16,28 @@ public class ExtendedClass {
         this.s = s;
     }
     
-    
+    //переопределение метода toString для нашего класса
     @Override
     public String toString(){
         return "Extended class var: b=" + b + " i=" + i + " d=" + d + " s=\"" + s + "\"";
     }
     
+    //переопределение equals
     @Override
     public boolean equals(Object object){
+        //проверка на null
         if (object == null) {
             return false;
         }
+        //проверка на принадлежность к одному классу
         if (ExtendedClass.class != object.getClass()){
             return false;
         }
+        //проверяем, сравниваем ли мы объект сам с собой
         if (this == object){
             return true;
         }
+        //объекты равны только при совпадении значений всех полей
         ExtendedClass ecObject = (ExtendedClass) object;
         return 
                 this.b == ecObject.b && 
@@ -43,6 +47,7 @@ public class ExtendedClass {
         
     }
     
+    //переопределяем hashCode
     @Override
     public int hashCode(){
         int result = 17;

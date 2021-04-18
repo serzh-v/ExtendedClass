@@ -1,8 +1,7 @@
 package com.mycompany.extendedclass;
 
 /**
- *
- * @author Dell
+ * класс, кот-ый содержит вызов методов
  */
 public class Main {
    public static void main (String [] args){
